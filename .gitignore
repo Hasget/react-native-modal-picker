@@ -1,0 +1,23 @@
+# Logs
+*.log
+
+# Runtime data
+tmp
+build
+dist
+
+# Dependency directory
+node_modules
+
+
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+
+# macOS
+.DS_Store

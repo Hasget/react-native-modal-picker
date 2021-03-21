@@ -1,0 +1,45 @@
+{
+  "name": "react-native-modal-picker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native",
+    "react-component",
+    "react-native-component",
+    "react-native-modal-picker",
+    "react",
+    "react native",
+    "mobile",
+    "ios",
+    "android",
+    "ui",
+    "picker",
+    "modal",
+    "modal-picker"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hasget/react-native-modal-picker.git"
+  },
+  "dependencies": {
+    "react-native-modal": "^11.7.0",
+    "@react-native-picker/picker": "^1.9.12"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "author": "Yauheny Maiorov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Hasget/react-native-modal-picker/issues"
+  },
+  "homepage": "https://github.com/Hasget/react-native-modal-picker#readme",
+  "devDependencies": {
+    "metro-react-native-babel-preset": "^0.65.2"
+  }
+}
