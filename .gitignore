@@ -1,6 +1,8 @@
 # Logs
 *.log
 
+.idea
+
 # Runtime data
 tmp
 build
