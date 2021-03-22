@@ -217,10 +217,12 @@ const styles = StyleSheet.create({
         width: '100%',
         borderColor: '#7D7D7D',
         borderBottomWidth: 1,
+        backgroundColor: '#fff'
     },
     pickerContainer: {
         height: 250,
         width: '100%',
+        backgroundColor: '#fff'
     },
     doneButton: {
         marginRight: 7,

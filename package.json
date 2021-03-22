@@ -1,5 +1,5 @@
 {
-  "name": "react-native-modal-picker",
+  "name": "@partypoison/react-native-modal-picker",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
