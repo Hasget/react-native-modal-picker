@@ -12,19 +12,19 @@ import { Picker } from '@react-native-picker/picker';
 import Modal from 'react-native-modal';
 
 const ListPicker = ({
-    items,
-    defaultValue,
-    placeholder,
-    mode,
-    onChange,
-    disabled,
-    loading,
-    spinnerSize,
-    spinnerColor,
-    androidStyle,
-    iosStyle,
-    placeholderStyle,
-}) => {
+                        items,
+                        defaultValue,
+                        placeholder,
+                        mode,
+                        onChange,
+                        disabled,
+                        loading,
+                        spinnerSize,
+                        spinnerColor,
+                        androidStyle,
+                        iosStyle,
+                        placeholderStyle,
+                    }) => {
     const [modalVisible, setModalVisible] = useState(false);
     const [itemValue, setItemValue] = useState('');
     const [tempValue, setTempValue] = useState('');
@@ -77,7 +77,7 @@ const ListPicker = ({
     const render = () => {
         if(Platform.OS === 'ios'){
             return (
-                <View>
+                <View style={{position: 'relative', justifyContent: 'center'}}>
                     <TouchableOpacity
                         onPress={() => setModalVisible(!modalVisible)}
                         style={{...styles.container, ...styles.iosContainer, ...iosStyle}}
@@ -85,10 +85,10 @@ const ListPicker = ({
                     >
                         {
                             itemValue
-                            ?
-                            <Text>{items.find(i => i.value === itemValue).label}</Text>
-                            :
-                            <Text style={{...styles.placeholder, ...placeholderStyle}}>{placeholder ? placeholder : ''}</Text>
+                                ?
+                                <Text>{items.find(i => i.value === itemValue).label}</Text>
+                                :
+                                <Text style={{...styles.placeholder, ...placeholderStyle}}>{placeholder ? placeholder : ''}</Text>
                         }
 
                     </TouchableOpacity>
@@ -146,35 +146,35 @@ const ListPicker = ({
                         enabled={!disabled}
                         onValueChange={(value, index) =>
                             select(value)
-                    }>
+                        }>
                         <Picker.Item label={placeholder} value='' color='#707070' />
                         {
                             items !== undefined
-                            ?
-                            items.map(item => {
-                                return <Picker.Item label={item.label} value={item.value} key={item.key || item.label} />
-                            })
-                            :
-                            null
+                                ?
+                                items.map(item => {
+                                    return <Picker.Item label={item.label} value={item.value} key={item.key || item.label} />
+                                })
+                                :
+                                null
                         }
                     </Picker>
                     {
                         loading
-                        ?
-                        <View style={{
-                            ...styles.spinner,
-                            backgroundColor: styles.container.backgroundColor,
-                        }}>
-                            <ActivityIndicator size={spinnerSize ? spinnerSize : 'small'} color={spinnerColor ? spinnerColor : '#005fe5'}/>
-                        </View>
-                        : null
+                            ?
+                            <View style={{
+                                ...styles.spinner,
+                                backgroundColor: styles.container.backgroundColor,
+                            }}>
+                                <ActivityIndicator size={spinnerSize ? spinnerSize : 'small'} color={spinnerColor ? spinnerColor : '#005fe5'}/>
+                            </View>
+                            : null
                     }
 
                 </View>
             );
         }
     }
-    
+
     return render();
 }
 
@@ -183,7 +183,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#f4f4f4',
         height: 48,
         borderRadius: 4,
-        position: 'relative'
+        position: 'relative',
+        justifyContent: 'center'
     },
     iosContainer: {
         justifyContent: "center",
@@ -195,7 +196,6 @@ const styles = StyleSheet.create({
     spinner: {
         position: 'absolute',
         right: 15,
-        top: 14,
     },
     placeholder: {
         color: '#666'
