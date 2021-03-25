@@ -40,11 +40,23 @@ const ListPicker = ({
         }
     }, []);
 
+    useEffect(() => {
+        setTempValue(defaultValue);
+        setItemValue(defaultValue);
+    }, [defaultValue]);
+
     const pressDone = () => {
         let item = findItemByValue(tempValue);
 
-        setItemValue(item.value);
-        onChange(item.value, item.id, item.label);
+        if (item !== undefined) {
+            setItemValue(item.value);
+            onChange(item.value, item.id, item.label);
+        } else {
+            setItemValue('');
+            onChange('', null, null);
+        }
+
+
         setModalVisible(false);
     };
 
@@ -120,7 +132,7 @@ const ListPicker = ({
                         <View style={styles.modalContainer}>
                             <View
                                 style={styles.pickerHeaderContainer}>
-                                <TouchableOpacity onPress={() => pressCancel(false)}>
+                                <TouchableOpacity onPress={() => pressCancel()}>
                                     <Text style={styles.cancelText}>
                                         Cancel
                                     </Text>
@@ -128,7 +140,7 @@ const ListPicker = ({
 
                                 <View style={styles.doneButton}>
                                     <Button
-                                        onPress={() => pressDone(false)}
+                                        onPress={() => pressDone()}
                                         title="Done"
                                     />
                                 </View>
