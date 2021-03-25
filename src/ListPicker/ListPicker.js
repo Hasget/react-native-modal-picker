@@ -29,6 +29,10 @@ const ListPicker = ({
     const [itemValue, setItemValue] = useState('');
     const [tempValue, setTempValue] = useState('');
 
+    const findItemByValue = (value) => {
+        return items.find(i => i.value === value);
+    }
+
     useEffect(() => {
         if (defaultValue) {
             setTempValue(defaultValue);
@@ -37,8 +41,10 @@ const ListPicker = ({
     }, []);
 
     const pressDone = () => {
-        setItemValue(tempValue);
-        onChange(tempValue);
+        let item = findItemByValue(tempValue);
+
+        setItemValue(item.value);
+        onChange(item.value, item.id, item.label);
         setModalVisible(false);
     };
 
@@ -48,8 +54,10 @@ const ListPicker = ({
     };
 
     const select = (value) => {
-        setItemValue(value);
-        onChange(value)
+        let item = findItemByValue(value);
+
+        setItemValue(item.value);
+        onChange(item.value, item.id, item.label);
     }
 
     const renderIosPicker = () => {
